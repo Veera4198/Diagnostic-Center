@@ -2,8 +2,8 @@
 
 <pre>
 git pull
-helm list | grep <name>
-helm upgrade <name> helm-app/
-helm list | grep <name>
-kubectl get pods | grep <name>
+helm list | grep <u>name</u>
+helm upgrade <u>name</u> helm-app/
+helm list | grep <u>name</u>
+kubectl get pods | grep <u>name</u>
 </pre>
