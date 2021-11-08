@@ -39,6 +39,10 @@ public class Customer {
 	
 	@Column(name="customer_password")
 	String customerPassword;
+
+	@Column(name="customer_address")
+	String customerAddress;
+
 	
 	@OneToMany(cascade = CascadeType.REMOVE,mappedBy="customer")
 	List<TestAppointment> testAppointment;
@@ -46,7 +50,7 @@ public class Customer {
 	public Customer() {}
 	
 	public Customer(int customerId, String customerName, int customerAge, char customerGender, String customerMailId,
-			long customerPhoneNumber, String customerPassword, List<TestAppointment> testAppointment){
+			long customerPhoneNumber, String customerPassword, String customerAddress, List<TestAppointment> testAppointment){
 		super();
 		this.customerId = customerId;
 		this.customerName = customerName;
@@ -55,6 +59,7 @@ public class Customer {
 		this.customerMailId = customerMailId;
 		this.customerPhoneNumber = customerPhoneNumber;
 		this.customerPassword = customerPassword;
+		this.customerAddress = customerAddress;
 		this.testAppointment = testAppointment;
 	}
 
@@ -114,6 +119,15 @@ public class Customer {
 		this.customerPassword = customerPassword;
 	}
 
+	// customerAddress
+	public String getCustomerAddress() {
+		return customerAddress;
+	}
+
+	public void setCustomerAddress(String customerAddress) {
+		this.customerAddress = customerAddress;
+	}
+
 	public List<TestAppointment> getTestAppointment() {
 		return testAppointment;
 	}
@@ -127,6 +141,7 @@ public class Customer {
 		return "Customer [customerId=" + customerId + ", customerName=" + customerName + ", customerAge=" + customerAge
 				+ ", customerGender=" + customerGender + ", customerMailId=" + customerMailId + ", customerPhoneNumber="
 				+ customerPhoneNumber + ", customerPassword="
-				+ customerPassword + ", testAppointment=" + testAppointment + "]";
+				+ customerPassword + ", customerAddress="
+				+ customerAddress + ", testAppointment=" + testAppointment + "]";
 	}
 }
