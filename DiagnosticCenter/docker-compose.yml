@@ -9,7 +9,7 @@ services:
       POSTGRES_PASSWORD: password
 
   app:
-    image: jaibw/emp111111
+    image: veera0921/emp46131564
     restart: always
     environment:
       DBHOST: db
